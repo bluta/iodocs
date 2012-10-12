@@ -51,5 +51,19 @@
              "version": "1.0",
              "crypt": "HMAC-SHA1"
         }
+    },
+    "terracycle": {
+        "name": "TerraCycle apiv2",
+         "protocol": "http",
+         "host": "api.localhost.hu",
+         "port": 3002,
+         "baseURL": "api.localhost.hu:3002",
+         "publicPath": "",
+         "auth": "key",
+         "debug": "true",
+         "keyParam": "api_key",
+         "booleanTrueVal": "true",
+         "booleanFalseVal": "false"
     }
+
 }

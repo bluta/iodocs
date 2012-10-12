@@ -303,11 +303,26 @@ function processRequest(req, res, next) {
         }
     }
 
+    var paramstring = ''
+    for (var param in params) {
+      if ( typeof(params[param])=='string' ) {
+        paramstring += "&" + param + "=" + params[param]
+      } else {
+        for (var subparam in params[param]) {
+          paramstring += "&" + param + "[" + subparam + "]=" + params[param][subparam]
+        }
+      }
+      console.log("BBBB")
+      console.log(param);
+      console.log("AAAA");
+    }
+    paramstring += '&' + apiConfig.keyParam + '=' + apiKey;
+
     var baseHostInfo = apiConfig.baseURL.split(':');
     var baseHostUrl = baseHostInfo[0],
         baseHostPort = (baseHostInfo.length > 1) ? baseHostInfo[1] : "";
 
-    var paramString = query.stringify(params),
+    var paramString = paramstring, //query.stringify(params),
         privateReqURL = apiConfig.protocol + '://' + apiConfig.baseURL + apiConfig.privatePath + methodURL + ((paramString.length > 0) ? '?' + paramString : ""),
         options = {
             headers: {},

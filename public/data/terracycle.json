@@ -1,0 +1,40 @@
+{
+   "endpoints":[
+      {
+         "name":"User",
+         "path":"user",
+
+         "methods":[
+            {
+               "MethodName":"createUser",
+               "Synopsis":"Signup user",
+               "HTTPMethod":"POST",
+               "URI":"/users.xml",
+               "parameters":[
+                  {
+                     "Name":"user[minimum_registration_age",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"boolean",
+                     "Description":"Filled age checkbox"
+                  },
+                  {
+                     "Name":"user[login",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Username"
+                  },
+                  {
+                     "Name":"test",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"test"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
